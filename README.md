@@ -3,10 +3,11 @@
 
 # promptr
 
-> Dynamic R
-Prompt
+> Dynamic R Prompt
 
-<!-- [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip) -->
+[![Project Status: WIP - Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 
 ## Overview
 
@@ -77,7 +78,7 @@ set_prompt(prompt_memuse)
 suspend()
 # set another prompt
 set_prompt(prompt_git)
-#> master*<U+2191>
+#> master*
 # disable again
 suspend()
 ```
