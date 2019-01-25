@@ -32,7 +32,7 @@ memory_usage <- function() {
   size <- memuse::mu.size(current)
   unit <- memuse::mu.unit(current)
 
-  grey()(paste0(round(size, 1), " ", unit, " | "))
+  grey()(paste0(round(size, 1), " ", unit))
 }
 
 

@@ -23,6 +23,9 @@ prompt_fancy <- function(expr, value, ok, visible) {
   memuse <- memory_usage()
 
   gitinfo <- git_info()
+  if (gitinfo != "") {
+    gitinfo = grey()(paste0(" | ", gitinfo))
+  }
 
   cat(
     status,
