@@ -1,15 +1,44 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
 
-# prompt
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+options(tibble.print_min = 5, tibble.print_max = 5)
+```
+
+
+# promptr
 
 > Dynamic R Prompt
 
 [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/prompt.svg?branch=master)](https://travis-ci.org/gaborcsardi/prompt)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/prompt?svg=true)](https://ci.appveyor.com/project/gaborcsardi/prompt)
-[![](http://www.r-pkg.org/badges/version/prompt)](http://www.r-pkg.org/pkg/prompt)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/prompt)](http://www.r-pkg.org/pkg/prompt)
 
-![](/inst/prompt-screenshot.png)
+## Overview
+
+This package is a fork from ["gaborcsardi/prompt"](https://github.com/gaborcsardi/prompt).
+It is adjusted so that it works under WINDOWS. 
+Prompts are modified to personal preferences.
+
+## Installation
+
+```{r, eval = FALSE}
+# Install the development version from GitHub:
+# install.packages("remotes")
+remotes::install_github("cstepper/promptr")
+```
+
+## Original notes from Gabor Csardi
+
+![](man/figures/prompt-screenshot.png)
 
 Set the R prompt dynamically, from a function. The package contains some
 examples. The prompt on the screenshot has:
@@ -20,14 +49,6 @@ examples. The prompt on the screenshot has:
 * Name of the active git branch.
 * State of the git working tree (needs pushes, pulls, and/or dirty).
 
-## Installation
-
-```r
-devtools::install_github("gaborcsardi/prompt")
-```
-
-## Usage
-
 Use the `prompt_fancy` prompt, as on the screenshot, or create your own.
 
 ```r
@@ -35,6 +56,7 @@ library(prompt)
 set_prompt(prompt_fancy)
 ```
 
-## License
+## Usage
 
-MIT © Gábor Csárdi
+
+

@@ -1,12 +1,14 @@
-Package: prompt
+Package: promptr
 Title: Dynamic R Prompt
-Version: 1.0.0
-Author: Gabor Csardi
-Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+Version: 1.0.1
+Authors@R: c(
+    person("Gabor", "Csardi", email = "csardi.gabor@gmail.com", role = c("cre", "aut")),
+    person("Christoph", "Stepper", email = "christoph.stepper@gmail.com", role = c("aut"))
+    )
 Description: Set the R prompt dynamically, from a function.
 License: MIT + file LICENSE
 URL: https://github.com/gaborcsardi/prompt
-BugReports: https://github.com/gaborcsardi/prompt/issues
+BugReports: https://github.com/cstepper/promptr/issues
 Imports:
     clisymbols,
     crayon,
