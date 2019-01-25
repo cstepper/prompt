@@ -14,24 +14,21 @@
 #' @param visible Whether the result is visible.
 #'
 #' @family prompts
-#' @importFrom crayon green red blue cyan
+#' @importFrom crayon green red
 #' @export
-
 prompt_fancy <- function(expr, value, ok, visible) {
 
   status <- ok_status(ok)
 
-  mem <- memory_usage()
+  memuse <- memory_usage()
 
-  pkg <- if (using_devtools()) crayon::blue(devtools_package()) else ""
-
-  git <- git_info()
+  gitinfo <- git_info()
 
   cat(
     status,
-    mem,
-    pkg,
-    git,
+    memuse,
+    gitinfo,
+    " ",
     sep = ""
   )
 }

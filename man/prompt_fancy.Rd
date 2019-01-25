@@ -25,6 +25,7 @@ Is shows: \itemize{
 }
 }
 \seealso{
-Other prompts: \code{\link{prompt_memuse}}
+Other prompts: \code{\link{prompt_git}},
+  \code{\link{prompt_memuse}}
 }
 \concept{prompts}

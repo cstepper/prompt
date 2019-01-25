@@ -156,21 +156,6 @@ git_info <- function() {
 
 
 
-
-## devtools utils ----
-
-using_devtools <- function() {
-  "devtools_shims" %in% search()
-}
-
-devtools_package <- function() {
-  tryCatch(
-    devtools::as.package(".")$package,
-    error = function(e) "<unknown pkg>"
-  )
-}
-
-
 ## misc utils ----
 
 grey <- function() {

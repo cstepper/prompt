@@ -8,8 +8,8 @@ prompt_memuse_factory <- function() {
     unit <<- memuse::mu.unit(current)
 
     cat(
-      crayon::cyan(
-        paste(round(size, 1), unit)
+      grey()(
+        paste0(round(size, 1), " ", unit, " ")
         )
       )
   }
@@ -21,5 +21,4 @@ prompt_memuse_factory <- function() {
 #'
 #' @family prompts
 #' @export
-
 prompt_memuse <- prompt_memuse_factory()

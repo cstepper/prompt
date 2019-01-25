@@ -13,6 +13,7 @@ prompt_memuse(...)
 Prompt that shows the current memory usage of the R process
 }
 \seealso{
-Other prompts: \code{\link{prompt_fancy}}
+Other prompts: \code{\link{prompt_fancy}},
+  \code{\link{prompt_git}}
 }
 \concept{prompts}
