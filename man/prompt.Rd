@@ -3,7 +3,6 @@
 \docType{package}
 \name{prompt}
 \alias{prompt}
-\alias{prompt-package}
 \title{Dynamic R Prompt}
 \description{
 Set the R prompt dynamically, from a function.

@@ -180,3 +180,7 @@ with_something <- function(set, reset = set) {
 in_dir <- with_something(setwd)
 
 os_type <- function() .Platform$OS.type
+
+drop_nulls <- function(x) {
+  x[!vapply(x, is.null, logical(1))]
+}

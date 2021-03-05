@@ -2,6 +2,7 @@
 % Please edit documentation in R/prompt_git.R
 \name{prompt_git}
 \alias{prompt_git}
+<<<<<<< HEAD
 \title{A git prompt, showing some information about the current git state}
 \usage{
 prompt_git(...)
@@ -9,10 +10,88 @@ prompt_git(...)
 \description{
 Is shows: \itemize{
   \item Git branch and state of the working tree if within a git tree.
+=======
+\alias{is_git_dir}
+\alias{git_branch}
+\alias{git_arrows}
+\alias{git_remote_status}
+\alias{git_dirty}
+\title{An example 'git' prompt}
+\usage{
+prompt_git(...)
+
+is_git_dir()
+
+git_branch()
+
+git_arrows()
+
+git_remote_status()
+
+git_dirty()
 }
+\arguments{
+\item{...}{Unused.}
+}
+\value{
+\code{prompt_git()} returns the prompt as a string.
+
+\code{is_git_dir()} returns a logical scalar.
+
+\code{git_branch()} returns a string. If the repository has no commits, then
+it returns \code{"main"}. Note that if git is not available, or fails for
+any reason, it will also return \code{"main"}, so you might want to call
+\code{is_git_dir()} as well.
+
+\code{git_arrows()} returns a string that has a down arrow if the remote
+has extra commits, and a down arrow if the local tree has extra commits
+compared to the remote. Or both arrows for diverged branches. If it is
+not the empty string then it adds a leading space character.
+
+\code{git_remote_status()} returns a numeric vector of length two. The first
+number is the number of extra commits in the local tree. The second
+number is the number of extra commits in the remote. If there is no
+remote, or git errors, it returns a vector of two \code{NA}s.
+
+\code{git_dirty()} returns a character string, \code{"*"} or \code{""}.
+}
+\description{
+An example 'git' prompt
+>>>>>>> upstream/main
+}
+\details{
+\code{prompt_git()} is a prompt with information about the git repository
+in the current working directory. It shows the current branch, whether
+there are commits to push or pull to the default remote, and whether
+the working directory is dirty.
+
+\code{is_git_dir()} checks whether the working directory is in a git tree.
+If git is not installed, then it always returns \code{FALSE}.
+
+\code{git_branch()} returns the name of the current branch.
+
+\code{git_arrows()} checks the status of the local tree compared to the
+configured remote.
+
+\code{git_remote_status()} checks the status of the local tree, compared to
+a configured remote.
+
+\code{git_dirty()} checks if the local tree has uncommitted changes.
+If there are, it returns \code{"*"}. Note that it also returns \code{"*"} on a
+git error, so you might want to use \code{is_git_dir()} as well.
 }
 \seealso{
+<<<<<<< HEAD
 Other prompts: \code{\link{prompt_fancy}},
   \code{\link{prompt_memuse}}
+=======
+Other example prompts: 
+\code{\link{new_prompt_powerline}()},
+\code{\link{prompt_devtools}()},
+\code{\link{prompt_fancy}()},
+\code{\link{prompt_mem}()},
+\code{\link{prompt_runtime}()},
+\code{\link{prompt_status}()}
+>>>>>>> upstream/main
 }
 \concept{prompts}

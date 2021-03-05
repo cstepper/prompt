@@ -1,5 +1,6 @@
 ## promptr 1.0.1
 
+<<<<<<< HEAD
 changes:
   - modified prompts to work under WINDOWS
   - use `cat()` instead of `paste0()` to print the prompts, as otherwise the 
@@ -9,5 +10,10 @@ changes:
 
 
 ## prompt 1.0.0
+=======
+# Development version
+
+# 1.0.0
+>>>>>>> upstream/main
 
 First public release.

@@ -1,0 +1,9 @@
+Package: foo
+Title: foo and bar
+Version: 1.0.0
+Author: Gabor Csardi
+Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+Description: Yep.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true

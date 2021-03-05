@@ -21,6 +21,9 @@ a function that is called after the evaluation every expression
 typed at the R prompt. The function should always return a
 character scalar.}
 }
+\value{
+No return value, called for side effects.
+}
 \description{
 Set and control the prompt
 }

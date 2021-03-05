@@ -1,98 +1,57 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# promptr
+# prompt
 
 > Dynamic R Prompt
 
-[![Project Status: WIP - Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+<!-- badges: start -->
+[![Lifecycle Status](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![R build status](https://github.com/gaborcsardi/prompt/workflows/R-CMD-check/badge.svg)](https://github.com/gaborcsardi/prompt/actions)
+<!-- badges: end -->
 
-## Overview
+Set the R prompt dynamically, from a function. The package contains some
+examples.
 
-This package is a fork from
-[“gaborcsardi/prompt”](https://github.com/gaborcsardi/prompt). It is
-adjusted so that it works under WINDOWS. Prompts are modified to
-personal preferences.
+## Examples
+
+![](https://user-images.githubusercontent.com/660288/109492379-3305e800-7a8b-11eb-9311-8196b6383d9e.png)
+
+This is `prompt_fancy()` and it has
+* The status of the last command (success or failure).
+* The amount of memory allocated by the current R process.
+* The name of the R package being developed using
+  [devtools](https://github.com/r-lib/devtools).
+* Name of the active git branch.
+* State of the git working tree (needs pushes, pulls, and/or dirty).
+
+![](https://user-images.githubusercontent.com/660288/109492387-36996f00-7a8b-11eb-8d0e-a43eea797da2.png)
+
+A [powerline](https://github.com/powerline/powerline) clone, that also
+shows the system load average and the current working directory.
 
 ## Installation
 
-``` r
-# Install the development version from GitHub:
-# install.packages("remotes")
-remotes::install_github("cstepper/promptr")
-```
+Install the package from CRAN, as usual:
 
-## Original notes from Gabor Csardi
-
-![](man/figures/prompt-screenshot.png)
-
-Set the R prompt dynamically, from a function. The package contains some
-examples. The prompt on the screenshot has:
-
-  - The status of the last command (success or failure).
-  - The amount of memory allocated by the current R process.
-  - The name of the R package being developed using
-    [devtools](https://github.com/hadley/devtools).
-  - Name of the active git branch.
-  - State of the git working tree (needs pushes, pulls, and/or dirty).
-
-Use the `prompt_fancy` prompt, as on the screenshot, or create your own.
-
-``` r
-library(prompt)
-set_prompt(prompt_fancy)
+```r
+install.packages("prompt")
 ```
 
 ## Usage
 
-Use the `prompt_fancy`, if you’d like to get information about the
+Use one of the pre-defined prompts, as on the screenshots, or create your own.
+You can set the prompt in your `.Rprofile`. Maybe you only want to do this
+in interactive mode:
 
-  - status of the last command (success or failure).
-  - amount of memory allocated by the current R process.
-  - name of the active git branch.
-  - state of the git working tree (needs pushes, pulls, and/or dirty).
-
-<!-- end list -->
-
-``` r
-library('promptr')
-set_prompt(prompt_fancy)
+```r
+if (interactive()) prompt::set_prompt(prompt::prompt_fancy)
 ```
 
-![](man/figures/promptr_fancy-screenshot.png)
+or the powerline prompt:
 
-Alternatively, you can choose `prompt_memuse` for the memory allocation
-info only, or `prompt_git` for info on the current status of your git
-branch.
-
-Change the prompt with:
-
-``` r
-library('promptr')
-# set prompt
-set_prompt(prompt_memuse)
-#> 70.8 MiB
-# disable again
-suspend()
-# set another prompt
-set_prompt(prompt_git)
-#> master*
-# disable again
-suspend()
+```r
+if (interactive()) prompt::set_prompt(prompt::new_prompt_powerline())
 ```
 
-## Notes
+## License
 
-If you’d like to use any prompt permanenty, you can modify your
-`~/Documents/.Rprofile` with something like this:
-
-``` bash
-.First <- function() {
-   if (interactive() == TRUE) {
-     library("promptr")
-     set_prompt(prompt_memuse)
-   }
-}
-```
+MIT © Gábor Csárdi

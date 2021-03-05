@@ -1,4 +1,4 @@
 library(testthat)
 library(prompt)
 
-test_check("prompt")
+if (packageVersion("ps") >= "1.6.0") test_check("prompt")
